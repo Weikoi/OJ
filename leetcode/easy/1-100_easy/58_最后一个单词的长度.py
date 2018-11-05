@@ -7,7 +7,7 @@ class Solution:
         :type s: str
         :rtype: int
         """
-        if s == ' ' or s == '' or len(s.strip()) == 0:
+        if len(s.strip()) == 0:
             return 0
         else:
             return len(s.split()[-1])
