@@ -1,5 +1,6 @@
 import time
 
+
 class Solution:
     def mySqrt(self, x):
         """

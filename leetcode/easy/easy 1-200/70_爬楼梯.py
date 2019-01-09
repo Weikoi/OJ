@@ -9,9 +9,10 @@ class Solution:
             return nums[1]
         elif n == 2:
             return nums[2]
-        for i in range(3, n+1):
-            nums.append(nums[i-1]+nums[i-2])
+        for i in range(3, n + 1):
+            nums.append(nums[i - 1] + nums[i - 2])
         return nums[n]
+
 
 if __name__ == '__main__':
     results = Solution()

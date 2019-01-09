@@ -14,12 +14,6 @@ class Solution:
         """
         if not root:
             return True
-        # elif abs(self.max_depth(root.left) - self.max_depth(root.right)) > 1:
-        # elif abs(self.max_depth(root.left) - self.max_depth(root.left)) > 1:
-        # return False
-        # else:
-        #     return self.isBalanced(root.left) and self.isBalanced(root.right)
-
         elif abs(self.max_depth(root.left) - self.max_depth(root.left)) > 1:
             return False
         else:
