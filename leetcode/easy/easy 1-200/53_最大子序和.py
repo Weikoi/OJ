@@ -41,6 +41,19 @@ class Solution:
         return MaxSum
 
 
+    # 动态规划
+    def maxSubArray3(self, nums: List[int]) -> int:
+        length = len(nums)
+
+        cur_max = nums[0]
+        total_max = nums[0]
+
+        for i in range(1, length):
+            cur_max = max(cur_max + nums[i], nums[i])
+            total_max = total_max if total_max > cur_max else cur_max
+        return total_max
+
+
 if __name__ == '__main__':
     results = Solution()
     time_s = time.clock()
