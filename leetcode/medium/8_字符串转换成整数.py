@@ -45,12 +45,18 @@ class Solution:
             low += 1
 
         if ms[0] == "-":
-            return max(-res, -2**31)
-        return min(res, 2**31-1)
+            return max(-res, -2 ** 31)
+        return min(res, 2 ** 31 - 1)
 
     def myAtoi3(self, str):
         import re
-        return max(min(int(*re.findall('^[\+\-]?\d+', str.lstrip())), 2**31 - 1), -2**31)
+        if not str:
+            return 0
+        if re.findall('^[\+\-]?\d+', str.strip()):
+            return max(min(int(''.join(re.findall('^[\+\-]?\d+', str.strip()))), 2 ** 31 - 1), -2 ** 31)
+        else:
+            return 0
+
 
 if __name__ == '__main__':
     print(Solution().myAtoi3("words and 987"))
