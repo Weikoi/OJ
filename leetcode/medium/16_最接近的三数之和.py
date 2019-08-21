@@ -1,3 +1,6 @@
+import sys
+
+
 class Solution:
     def threeSumClosest(self, nums: List[int], target: int) -> int:
         nums.sort()
@@ -24,3 +27,6 @@ class Solution:
                 else:
                     right -= 1
         return result
+
+if __name__ == '__main__':
+    print(sys.maxsize)
