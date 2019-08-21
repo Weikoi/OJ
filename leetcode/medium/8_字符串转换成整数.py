@@ -34,7 +34,8 @@ class Solution:
         res = 0
         while low < len(ms) and ms[low] in op:  # 判断符号位是否正确
             low += 1
-        if low > 1 or low == len(ms): return 0  # 只有符号没有数字，或者符号多于一个
+        if low > 1 or low == len(ms):
+            return 0  # 只有符号没有数字，或者符号多于一个
 
         while low < len(ms):
             if ms[low] in numset:
@@ -44,5 +45,12 @@ class Solution:
             low += 1
 
         if ms[0] == "-":
-            return max(-res, -0x80000000)
-        return min(res, 0x7FFFFFFF)
+            return max(-res, -2**31)
+        return min(res, 2**31-1)
+
+    def myAtoi3(self, str):
+        import re
+        return max(min(int(*re.findall('^[\+\-]?\d+', str.lstrip())), 2**31 - 1), -2**31)
+
+if __name__ == '__main__':
+    print(Solution().myAtoi3("words and 987"))

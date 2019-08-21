@@ -21,6 +21,5 @@ def reverse(x):
         else:
             return int(sum_str)
 
-
 if __name__ == '__main__':
     print(reverse(-30))

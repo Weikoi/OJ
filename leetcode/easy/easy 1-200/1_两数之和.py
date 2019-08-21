@@ -8,7 +8,7 @@ class Solution(object):
                 return [dic[num], i]
             else:
                 dic[target - num] = i
-                print(dic)
+                # print(dic)
 
 
 # 第一题的标准答案就刷新三观，一遍遍历就做到了。
