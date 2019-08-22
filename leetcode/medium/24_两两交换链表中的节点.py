@@ -22,15 +22,17 @@ class Solution:
 
     # 法二：不可改变节点的val
     def swapPairs2(self, head):
-        HEAD = ListNode(0)
-        HEAD.next = head
-        pre = HEAD
-        while head and head.next:
-            cur = head
-            tmp = cur.next
-            head = tmp.next
-            pre.next = tmp
-            cur.next = head
-            tmp.next = cur
-            pre = cur
-        return HEAD.next
+        init = ListNode(0)
+        init.next = head
+        cur = init
+
+        while cur.next and cur.next.next:
+            sec = cur.next
+            fir = sec.next
+
+            sec.next = fir.next
+            fir.next = cur.next
+            cur.next = fir
+            cur = sec
+
+        return init.next
